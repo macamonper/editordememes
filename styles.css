@@ -377,7 +377,7 @@ input[type='range']::-webkit-slider-thumb {
     height: 1em;
     width: 1em;
     border-radius: 50%;
-    background: white);
+    background: white;
     cursor: pointer;
   }
   
