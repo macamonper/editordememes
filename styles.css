@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+/****************************************************************************************************
+MODOS                                   MODOS                                    MODOS
+****************************************************************************************************/
+
+body.dark{
+    --colorFondoPrimario: #2f2e4d;
+    --colorFondoSecundario: #312244;
+    --colorFondoTerciario: #271B36;
+    --colorTexto: white;
+    
+    --botonMenuHover:#402d58;
+    --btnDescarga: #15a14b;
+    --btnDescargaHover: #359459;
+    
+    --input:#393e49;
+    --inputHover: #4d194d;
+    --panelInputHover:
+}
+body.claro{
+    --colorFondoPrimario: #f8f7f5;
+    --colorFondoSecundario: #f7f0e8f5;
+    --colorFondoTerciario:#D5D0CD;
+    --colorTexto: black;
+    
+    --botonMenuHover:#e6dbd0;
+    --btnDescarga: #c0bba3;
+    --btnDescargaHover: #a8a48e;
+    --input:#ccccc8;
+    --inputHover: #b3b4a7;
+}
+
+/****************************************************************************************************
+HEADER                                    HEADER                                    HEADER
+****************************************************************************************************/
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+header{
+
+    border: solid 1px transparent;
+    background-color: var(--colorFondoSecundario);
+    height:100%;
+    width:100%;
+    color: var(--colorTexto);
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    
+}
+
+h1{
+    display: flex;
+    font-size: 2.25rem;
+}
+
+.boton-menu{
+    margin-top: 1em;
+    margin-inline-start: 2em;
+    border: 1px transparent solid;
+    padding: 0.5em;
+    background-color: transparent;
+    font-size: 0.875rem;
+    color:var(--colorTexto);
+    cursor: pointer;
+
+}
+.boton-menu:hover{
+    background-color:var(--botonMenuHover);
+    
+    border-radius: 1em;
+    
+}
+.boton-switch{
+    background-color: var(--botonMenuHover);
+    color: var(--colorTexto);
+    margin-top: 1em;
+    margin-inline-start: 2em;
+    border: 1px transparent solid;
+    padding: 0.5em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border-radius: 1em;
+   
+}
+.boton-switch:hover{
+    background-color:var(--botonMenuHover);
+    
+}
+.boton-switch::after{
+    display:block;
+    background: #fffbf5;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top:0em;
+    left:0em;
+    right:unset;
+    border-radius: 3em;
+    transition: all .5s ease-in;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+    content: "";
+}
+.boton-switch.active::after{
+    left:unset;
+    right:0;
+}
+
+i{
+    padding-inline-end: 0.5em;
+}
+/****************************************************************************************************
+MAIN                                    MAIN                                    MAIN
+****************************************************************************************************/
+
+main{
+    background-color: var(--colorFondoPrimario);
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.meme-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-width: 560px;
+
+    width: 80%;
+}
+
+
+.top-text{
+
+    background-color: white;
+    margin-top: 1em;
+    padding-top:1em;
+    padding-bottom: 1em;
+    min-width: 45%;
+    width: 45%;
+    
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+#meme{
+    background-color: black;
+    width: 45%;
+    padding-top:7.5em;
+    padding-bottom: 7em;
+;
+    background-repeat: no-repeat;
+    background-size: cover ;
+
+}
+.bottom-text{
+    background-color: white;
+    padding-top:1em;
+    padding-bottom: 1em;
+    width: 45%;
+
+    font-size: 1.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.btnDescarga{
+
+    display: flex;
+
+    color: var(--colorTexto);
+    background-color: var(--btnDescarga);
+    border: 1px solid transparent;
+    border-radius:3px ;
+
+    font-size: 0.7rem;
+    margin-top: 1.5em;
+    margin-bottom: 1.6em;
+    padding: 0.5em;
+}
+
+.btnDescarga:hover{
+    background-color: var(--btnDescargaHover);
+}
+/****************************************************************************************************
+ASIDE                                   ASIDE                                    ASIDE
+****************************************************************************************************/
+.panel{
+    display: flex;
+}
+
+.ocultar{
+    display: none;
+    visibility: hidden;
+}
+#cruz{    
+    text-align: right;
+    background-color: var(--colorFondoTerciario);
+    color: var(--colorTexto);
+    border: transparent;
+    margin-bottom: 0.5em;
+}
+.cross{
+    border: 4px transparent solid;
+    cursor: pointer;
+    border-radius:20% ;
+    padding: 1px;}
+
+.cross:hover{
+    background-color: var(--inputHover);
+}
+#container-aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    
+    height: 100%;
+    width:25%;
+    padding: 1.875rem 0.9375rem;
+    color:var(--colorTexto);
+    background-color:var(--colorFondoTerciario);
+
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+    z-index: 10;
+    
+
+}
+h2{
+    font-size: 1.125rem;
+    font-weight:800;
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+h3{
+    font-size: 0.75rem;
+    font-weight: bolder;
+    margin-bottom: 1em;
+}
+label{ 
+    font-size: 0.75rem;
+}
+
+
+.panel-input{
+    width: 100%;
+    height: 100%;
+    margin: 0em 0.5em 0.5em 0em;
+    padding: 0.3125em 0.625em;
+    
+    border:0;
+    border-radius: 3px;
+    color: var(--colorTexto);
+    background-color: var(--input);
+    
+}
+
+
+.panel-input-color{
+    width: 100%;
+    height: 100%;
+    margin: 0em 0.5em 0.5em 0em;
+    padding: 0.3125em 7em 0em 0.625em;
+
+    background-color: var(--input);
+    border: transparent;
+    border-radius: 3px;
+    margin-bottom: 0.3125em;
+}
+.panel-input-color:hover,.panel-input:hover,input:hover,.botonAlign:hover{
+    background-color: var(--inputHover);
+}
+
+.colorflex{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.panel-mezcla{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+
+}
+
+.span-input{
+position:absolute;
+margin: 0.4em 0em 0em 2em;
+
+}
+
+.margen{
+    margin-top: 1em;
+}
+.margenIzq{
+    margin-inline-end: 1em;
+}
+textarea{
+    resize: vertical;
+    outline: none;
+    margin: 0em 0.2083em 0.3125em 0em;
+    height: 3em;
+    width: 25.5625em;
+}
+.numeroDeFuente{
+    width:10em;
+    text-align: center;
+}
+.botonAlign{
+    color: var(--colorTexto);
+    background-color: var(--input);
+    border: 1px solid transparent;
+    border-radius: 10%;
+    height: 100%;
+}
+.iAlign{
+    padding: 0.5em;
+    
+}
+/*
+INPUTS                                         INPUTS                                         INPUTS                  
+*/
+input[type='range'] {
+    width: 100%;
+    background-color: #5a5d68;
+    border-radius: 0.625em;
+    appearance: none;
+    height: 0.375em;
+    margin-top: 0.625em;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height:1em;
+    width: 1em;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+  }
+
+  
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    border-radius: 50%;
+    background: white);
+    cursor: pointer;
+  }
+  
+  input[type='checkbox'] {
+    margin: 0 5px 0 0;
+    height: 1em;
+  }
+
+  input[type='color']::-webkit-color-swatch {
+    height: 1em;
+    min-width: 1.125em;
+    border-radius: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    
+  }
+//ESCONDER SCROLL//
+

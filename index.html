@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de memes</title>
+
+    <link rel="stylesheet" href="styles.css"/>
+    
+</head>
+
+<body class= "dark" onload="saludar()">
+    
+    <!--
+        ************************************************************************************************
+        HEADER                    HEADER                             HEADER
+        ************************************************************************************************
+    -->    
+    <header class="flex">
+        
+        <div>
+            <h1>Generador de Memes</h1>
+            
+            <div ">
+                <button class="boton-menu" id="botonImagen"><i class="far fa-file-image"></i>Imagen</button>
+                <button class="boton-menu" id="botonTexto"><i class="fas fa-font"></i>Texto</button>
+                <button class="boton-switch" id="switchMode">
+                    <span><i class="fas fa-sun"></i></span>
+                    <span><i class="fas fa-moon"></i></span>
+                </button>
+            </div>
+            
+            </header>
+            
+            <!--
+                ************************************************************************************************
+                MAIN                         MAIN                            MAIN
+                ************************************************************************************************
+            -->  
+            <main class="flex">
+                
+                <div class="meme-container ">
+                    
+                    
+                    <div class="top-text">
+                        <p class="primerTexto">TOP TEXT</p>
+                    </div>
+                    
+                    <div id="meme">
+                        
+                    </div>
+                    
+                    <div class="bottom-text">
+                        <p class="segundoTexto">BOTTOM TEXT</p>
+                    </div>
+                    
+                    
+                    <button class="btnDescarga">
+                        <i class="fas fa-download"></i>
+                        <p>Descargar meme</p>
+                    </button>
+                    
+                    
+                </div> 
+                
+                
+            </main>
+            <!--    
+                ************************************************************************************************
+                ASIDE                         ASIDE                         ASIDE
+                ************************************************************************************************
+            -->
+            
+            <section class="panel">
+
+                <div id="container-aside" class="ocultar">
+
+                    <button id= "cruz"><i  class=" cross far fa-times-circle" ></i></button>
+<!--IMAGEN                                      IMAGEN                          IMAGEN                      IMAGEN-->
+                    <div id="imagen">
+
+                        <div>
+                            <h2>IMAGEN</h2>
+                        </div>  
+
+                        <div>
+                            <h3>URL</h3>
+                            <label for="link-a-imagen"></label>
+                            <input type="url" id="link" class= "panel-input" name="imagen" aria-label="url de la imagen">
+                        </div>
+
+                        <div class="margen">
+                            <h3 >Fondo</h3>
+                        </div>
+
+                        <div class="colorflex">
+
+                            <div class="panel-mezcla">
+                                <input type="color" class="panel-input-color" id="color" name="color" value="#fffff" aria-label="Color de fondo de la imagen">
+                                <span class="span-input" id="textColor" aria-hidden="true">#FFFFFF</span>
+                            </div>
+                            
+                            <div>
+                                <select class="panel-input" aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+                                    <option value="unset">Ninguno</option>
+                                    <option value="lighten">Aclarar</option>
+                                    <option value="darken">Oscurecer</option>
+                                    <option value="difference">Diferencia</option>
+                                    <option value="luminosity">Luminosidad</option>
+                                    <option value="multiply">Multiplicar</option>
+                                    
+                                </select>
+                            </div>      
+                        </div>
+                        
+                        <div class="margen">
+                            <form> 
+                                <div>
+                                    <h3>Filtros</h3>
+                                </div>
+                                <div>    
+                                    <label for="brillo">BRILLO:</label>
+                                    <input type="range" id="brillo" name="brillo" min="0" max="10" aria-label="brillo">
+                                </div>
+                                <div>   
+                                    <label for="opacidad">OPACIDAD:</label>
+                                    <input type="range" id="opacidad" name="opacidad" min="0" max="10" aria-label="opacidad">
+                                </div>
+                                <div>  
+                                    <label for="contraste">CONTRASTE:</label>
+                                    <input type="range" id="contraste" name="contraste" min="0" max="10" aria-label="CONTRASTE">
+                                </div>
+                                <div>   
+                                    <label for="desenfoque">DESENFOQUE:</label>
+                                    <input type="range" id="desenfoque" name="desenfoque" min="0" max="10" aria-label="DESENFOQUE">
+                                </div>
+                                <div>   
+                                    <label for="escala de grises">ESCALA DE GRISES:</label>
+                                    <input type="range" id="escala de grises" name="escala de grises" min="0" max="10" aria-label="ESCALA DE GRISES">
+                                </div>
+                                <div>   
+                                    <label for="sepia">SEPIA:</label>
+                                    <input type="range" id="sepia" name="sepia" min="0" max="10" aria-label="SEPIA">
+                                </div>
+                                <div>    
+                                    <label for="hue">HUE:</label>
+                                    <input type="range" id="HUE" name="HUE" min="0" max="10" aria-label="HUE">
+                                </div>
+                                <div>   
+                                    <label for="SATURADO">SATURADO:</label>
+                                    <input type="range" id="SATURADO" name="escala de grises" min="0" max="10" aria-label="SATURADO">
+                                </div>
+                                <div>    
+                                    <label for="sepia">NEGATIVO:</label>
+                                    <input type="range" id="NEGATIVO" name="NEGATIVO" min="0" max="10" aria-label="NEGATIVO">
+                                </div>
+                                <div>       
+                                    <p><button type="reset">Reset</button></p>
+                                </div> 
+                            </form> 
+                        </div>  
+
+                    </div>
+<!--TEXTO                             TEXTO                         TEXTO                    TEXTO              -->
+
+                <div id="texto">
+
+                    <div>
+                        <h2>TEXTO</h2>
+                    </div>
+
+                    <div>
+                        <h3>SUPERIOR</h3>
+                        <label for="texto1"></label>
+                        <textarea aria-label="Texto superior" class="panel-input" id="top-text-input" >TOP TEXT</textarea>                        
+                    </div>
+
+                    <div class="">
+                        <input type="checkbox" id="textoSuperior" name="texto" value="texto-superior">
+                        <label for="textoSuperior"> Sin texto superior</label><br>
+                    </div>
+                
+                    <div class="margen">
+                        <h3>INFERIOR</h3>
+                        <label for="texto2"></label>
+                        <textarea aria-label="Texto inferior" class="panel-input" id="bottom-text-input" >BOTTOM TEXT</textarea>                    </div>
+
+                
+
+                    <div class="">
+                        <input type="checkbox" id="textoInferior" name="texto" value="texto-inferior">
+                        <label for="textoInferior"> Sin texto inferior</label><br>
+                    </div>
+
+                    <div class="margen">
+                        <h3>FUENTE</h3>
+                    </div>
+                    
+                    <div>
+                        <select class="panel-input" aria-label="Tipo de fuente" id="font-selector" class="panel-control-input">
+                            <option value="unset">Ninguno</option>
+                            <option value="arial">Arial</option>
+                            <option value="arial-black">Arial Black</option>
+                            <option value="american-typewriter">American Typewriter</option>
+                            <option value="andale-mono">Andale Mono</option>
+                            <option value="comic-sans-ms">Comic Sans Ms</option>
+                            <option value="helvetica">Helvetica</option>
+                            <option value="impact">Impact</option>
+                            <option value="verdana">Verdana</option>
+                            <option value="times-new-roman">Times New Roman</option>
+                        </select>
+                    </div> 
+                    
+                    <div class="panel colorflex">
+
+                        <div>
+                            <input class="panel-input numeroDeFuente" type="number" name= "Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="testSizeValue" min="12" value="40">
+                        </div>
+
+                        <div >
+                            <button class=" botonAlign"><i class="fas fa-align-right iAlign"></i></button>
+                            <button class=" botonAlign"><i class="fas fa-align-center iAlign"></i></button>
+                            <button class=" botonAlign"><i class="fas fa-align-left iAlign"></i></button>
+                         </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+    <script src="app.js"></script>
+                
+     <script src="https://kit.fontawesome.com/5bbce2ab5d.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
