@@ -70,4 +70,55 @@ function cambiarUrl(){
 url.addEventListener("change",cambiarUrl);
 
 //CAMBIAR TOP TEXT                  CAMBIAR TOP TEXT                  CAMBIAR TOP TEXT
-const topText = document.getElementsByClassName("primerTexto");
+const topText = document.querySelector(".primerTexto");
+const InputTopText = document.getElementById("top-text-input");
+
+InputTopText.addEventListener("input",() =>{
+  topText.innerText=InputTopText.value;
+});
+
+//CAMBIAR BOTTOM TEXT             CAMBIAR BOTTOM TEXT                 CAMBIAR BOTTOM TEXT
+
+const bottomText = document.querySelector(".segundoTexto");
+const InputBottomText = document.getElementById("bottom-text-input");
+
+InputBottomText.addEventListener("input",() =>{
+  bottomText.innerText=InputBottomText.value;
+});
+//QUITAR TEXTO
+const checkboxTop = document.getElementById("textoSuperior");
+const checkboxBottom = document.getElementById("textoInferior");
+const divTopText= document.querySelector(".top-text");
+const divBottomText = document.querySelector(".bottom-text");
+
+checkboxTop.addEventListener( 'change', function() {
+  if(checkboxTop.checked) {
+    meme.style.height="23em";
+    divTopText.classList.toggle('ocultar');
+    topText.classList.toggle('ocultar')
+  } 
+  else{
+    divTopText.classList.toggle('ocultar');
+    topText.classList.toggle('ocultar')
+  
+  }
+});
+ checkboxBottom.addEventListener( 'change', function() {
+  if(checkboxBottom.checked) {
+    meme.style.height="23em";
+    divBottomText.classList.toggle('ocultar');
+    bottomText.classList.toggle('ocultar')
+  } 
+  else{
+    divBottomText.classList.toggle('ocultar');
+    bottomText.classList.toggle('ocultar')
+  }
+});
+//ESTO NO FUNCIONA
+if (checkboxTop.checked & checkboxBottom.checked){
+  meme.style.height="30em";
+
+}
+//
+
+
