@@ -41,19 +41,12 @@
             <main class="row">
                 
                 <div class="meme-container ">
-                    
-                    
-                    <div class="top-text">
-                        <p class="primerTexto">TOP TEXT</p>
-                    </div>
-                    
-                    <div id="meme">
-                        
-                    </div>
-                    
-                    <div class="bottom-text">
-                        <p class="segundoTexto">BOTTOM TEXT</p>
-                    </div>
+
+                    <p class="top-text">TOP TEXT</p>
+        
+                    <div id="meme"></div>
+
+                    <p class="bottom-text">BOTTOM TEXT</p>
          
                 </div> 
                 
@@ -71,7 +64,7 @@
             
             <section class="panel">
 
-                <div id="container-aside" class="ocultar">
+                <div id="container-aside" class="hidden">
 
                     <button id= "cruz"><i  class=" cross far fa-times-circle" ></i></button>
 <!--IMAGEN                                      IMAGEN                          IMAGEN                      IMAGEN-->
@@ -99,7 +92,7 @@
                             </div>
                             
                             <div>
-                                <select class="panel-input" aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select" class="panel-control-input">
+                                <select class="panel-input panel-control-input" aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select">
                                     <option value="unset">Ninguno</option>
                                     <option value="lighten">Aclarar</option>
                                     <option value="darken">Oscurecer</option>
@@ -173,7 +166,7 @@
                         <textarea aria-label="Texto superior" class="panel-input" id="top-text-input" >TOP TEXT</textarea>                        
                     </div>
 
-                    <div class="">
+                    <div>
                         <input type="checkbox" id="textoSuperior" name="texto" value="texto-superior">
                         <label for="textoSuperior"> Sin texto superior</label><br>
                     </div>
@@ -185,7 +178,7 @@
 
                 
 
-                    <div class="">
+                    <div>
                         <input type="checkbox" id="textoInferior" name="texto" value="texto-inferior">
                         <label for="textoInferior"> Sin texto inferior</label><br>
                     </div>
@@ -195,7 +188,7 @@
                     </div>
                     
                     <div>
-                        <select class="panel-input" aria-label="Tipo de fuente" id="font-selector" class="panel-control-input">
+                        <select class="panel-input panel-control-input" aria-label="Tipo de fuente" id="font-selector">
                             <option value="unset">Ninguno</option>
                             <option value="arial">Arial</option>
                             <option value="arial-black">Arial Black</option>

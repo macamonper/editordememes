@@ -4,12 +4,6 @@
 function saludar () {
   console.log('Esta pagina ya se ha cargado');
 }
-//CERRAR SOLAPA DE DISEÑO            CERRAR SOLAPA DE DISEÑO           CERRAR SOLAPA DE DISEÑO
-const cierre= document.getElementById("cruz");
-
-cierre.addEventListener("click",() => {
-  document.getElementById("container-aside").classList.add('ocultar');
-});
 
 //CAMBIAR ENTRE PESTAÑAS             CAMBIAR ENTRE PESTAÑAS          CAMBIAR ENTRE PESTAÑAS
 const solapaImagen = document.getElementById("botonImagen");
@@ -18,18 +12,17 @@ const solapaTexto = document.getElementById("botonTexto");
 solapaImagen.addEventListener('click',() => {
   document.getElementById("texto").classList.add('ocultar');
   document.getElementById("imagen").classList.remove('ocultar');
-  document.getElementById("container-aside").classList.remove('ocultar');
-
+  document.getElementById("container-aside").classList.remove('hidden');
+  
 });
 
 solapaTexto.addEventListener('click',() => {
   document.getElementById("imagen").classList.add('ocultar');
   document.getElementById("texto").classList.remove('ocultar');
-  document.getElementById("container-aside").classList.remove('ocultar');
-
-
+  document.getElementById("container-aside").classList.remove('hidden');
+  
+  
 });
-
 
 //CAMBIAR MODOS                   CAMBIAR MODOS                       CAMBIAR MODOS
 const cambiarModo = document.getElementById("switchMode");
@@ -38,6 +31,14 @@ const cambiarModo = document.getElementById("switchMode");
 cambiarModo.addEventListener('click',() => {
   document.body.classList.toggle('claro');
   cambiarModo.classList.toggle('active');
+});
+
+
+//CERRAR SOLAPA DE DISEÑO            CERRAR SOLAPA DE DISEÑO           CERRAR SOLAPA DE DISEÑO
+const cierre= document.getElementById("cruz");
+
+cierre.addEventListener("click",() => {
+  document.getElementById("container-aside").classList.add('hidden');
 });
 
 //CAMBIAR COLOR DE FONDO DE MEME      CAMBIAR COLOR DE FONDO DE MEME   CAMBIAR COLOR DE FONDO DE MEME
@@ -50,7 +51,7 @@ function cambiarcolor( ){
 
 color.addEventListener('input', cambiarcolor);
 
-//CAMBIAR VALOR DE COLOR              CAMBIAR VALOR DE COLOR           CAMBIAR VALOR DE COLOR 
+//    CAMBIAR VALOR DE COLOR EN SPAN                       CAMBIAR VALOR DE COLOR EN SPAN          
 
 function blendText() {
   document.getElementById("textColor").innerHTML =`${valorColor.value}`;
@@ -70,7 +71,7 @@ function cambiarUrl(){
 url.addEventListener("change",cambiarUrl);
 
 //CAMBIAR TOP TEXT                  CAMBIAR TOP TEXT                  CAMBIAR TOP TEXT
-const topText = document.querySelector(".primerTexto");
+const topText = document.querySelector(".top-text");
 const InputTopText = document.getElementById("top-text-input");
 
 InputTopText.addEventListener("input",() =>{
@@ -79,7 +80,7 @@ InputTopText.addEventListener("input",() =>{
 
 //CAMBIAR BOTTOM TEXT             CAMBIAR BOTTOM TEXT                 CAMBIAR BOTTOM TEXT
 
-const bottomText = document.querySelector(".segundoTexto");
+const bottomText = document.querySelector(".bottom-text");
 const InputBottomText = document.getElementById("bottom-text-input");
 
 InputBottomText.addEventListener("input",() =>{
@@ -93,32 +94,28 @@ const divBottomText = document.querySelector(".bottom-text");
 
 checkboxTop.addEventListener( 'change', function() {
   if(checkboxTop.checked) {
-    meme.style.height="23em";
-    divTopText.classList.toggle('ocultar');
     topText.classList.toggle('ocultar')
   } 
   else{
-    divTopText.classList.toggle('ocultar');
     topText.classList.toggle('ocultar')
   
   }
 });
- checkboxBottom.addEventListener( 'change', function() {
-  if(checkboxBottom.checked) {
-    meme.style.height="23em";
-    divBottomText.classList.toggle('ocultar');
-    bottomText.classList.toggle('ocultar')
-  } 
-  else{
-    divBottomText.classList.toggle('ocultar');
-    bottomText.classList.toggle('ocultar')
-  }
-});
-//ESTO NO FUNCIONA
-if (checkboxTop.checked & checkboxBottom.checked){
-  meme.style.height="30em";
 
+checkboxBottom.addEventListener( 'change', function() {
+if(checkboxBottom.checked) {
+  bottomText.classList.toggle('ocultar')
+} 
+else{
+  bottomText.classList.toggle('ocultar')
 }
-//
+});
 
+//CAMBIAR FUENTE 
+const selectorFuente = document.getElementById("font-selector");
+
+selectorFuente.addEventListener("change", () =>{
+  topText.style.fontFamily =`${selectorFuente.value}` ;
+  bottomText.style.fontFamily =`${selectorFuente.value}`;
+});
 
