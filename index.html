@@ -62,7 +62,7 @@
                 ************************************************************************************************
             -->
             
-            <section class="panel">
+            <section class="  ">
 
                 <div id="container-aside" class="hidden">
 
@@ -84,15 +84,15 @@
                             <h3 >Fondo</h3>
                         </div>
 
-                        <div class="colorflex">
+                        <div class="spaceBtwn ">
 
-                            <div class="panel-mezcla">
-                                <input type="color" class="panel-input-color" id="color" name="color" value="#fffff" aria-label="Color de fondo de la imagen">
-                                <span class="span-input" id="textColor" aria-hidden="true">#FFFFFF</span>
+                            <div class="panel inputColor">
+                                <input type="color" class="BolaColor" id="color" name="color" value="#fffff" aria-label="Color de fondo de la imagen">
+                                <span  id="textColor" aria-hidden="true">#FFFFFF</span>
                             </div>
                             
                             <div>
-                                <select class="panel-input panel-control-input" aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select">
+                                <select class="inputSelect " aria-label="Modo de mezcla de fondo de imagen" id="blend-mode-select">
                                     <option value="unset">Ninguno</option>
                                     <option value="lighten">Aclarar</option>
                                     <option value="darken">Oscurecer</option>
@@ -104,52 +104,44 @@
                             </div>      
                         </div>
                         
-                        <div class="margen">
-                            <section> 
-                                <div>
-                                    <h3>Filtros</h3>
-                                </div>
-                                <div>    
-                                    <label for="brillo">BRILLO:</label>
-                                    <input type="range" id="brillo" name="brillo" min="0" max="10" aria-label="brillo">
-                                </div>
-                                <div>   
-                                    <label for="opacidad">OPACIDAD:</label>
-                                    <input type="range" id="opacidad" name="opacidad" min="0" max="10" aria-label="opacidad">
-                                </div>
-                                <div>  
-                                    <label for="contraste">CONTRASTE:</label>
-                                    <input type="range" id="contraste" name="contraste" min="0" max="10" aria-label="CONTRASTE">
-                                </div>
-                                <div>   
-                                    <label for="desenfoque">DESENFOQUE:</label>
-                                    <input type="range" id="desenfoque" name="desenfoque" min="0" max="10" aria-label="DESENFOQUE">
-                                </div>
-                                <div>   
-                                    <label for="escala de grises">ESCALA DE GRISES:</label>
-                                    <input type="range" id="escala de grises" name="escala de grises" min="0" max="10" aria-label="ESCALA DE GRISES">
-                                </div>
-                                <div>   
-                                    <label for="sepia">SEPIA:</label>
-                                    <input type="range" id="sepia" name="sepia" min="0" max="10" aria-label="SEPIA">
-                                </div>
-                                <div>    
-                                    <label for="hue">HUE:</label>
-                                    <input type="range" id="HUE" name="HUE" min="0" max="10" aria-label="HUE">
-                                </div>
-                                <div>   
-                                    <label for="SATURADO">SATURADO:</label>
-                                    <input type="range" id="SATURADO" name="escala de grises" min="0" max="10" aria-label="SATURADO">
-                                </div>
-                                <div>    
-                                    <label for="sepia">NEGATIVO:</label>
-                                    <input type="range" id="NEGATIVO" name="NEGATIVO" min="0" max="10" aria-label="NEGATIVO">
-                                </div>
-                                <div>       
-                                    <p><button onclick="">Reset</button></p>
-                                </div> 
-                            </section> 
-                        </div>  
+                        <section class="margen"> 
+                            
+                                <h3>Filtros</h3>
+                            
+                            <div>    
+                                <label for="brillo">BRILLO:</label>
+                                <input type="range" id="brillo" name="brillo" min="0" max="10" aria-label="brillo">
+                            
+                                <label for="opacidad">OPACIDAD:</label>
+                                <input type="range" id="opacidad" name="opacidad" min="0" max="10" aria-label="opacidad">
+            
+                                <label for="contraste">CONTRASTE:</label>
+                                <input type="range" id="contraste" name="contraste" min="0" max="10" aria-label="CONTRASTE">
+                        
+                                <label for="desenfoque">DESENFOQUE:</label>
+                                <input type="range" id="desenfoque" name="desenfoque" min="0" max="10" aria-label="DESENFOQUE">
+                            
+                                <label for="escala de grises">ESCALA DE GRISES:</label>
+                                <input type="range" id="escala de grises" name="escala de grises" min="0" max="10" aria-label="ESCALA DE GRISES">
+                                
+                                <label for="sepia">SEPIA:</label>
+                                <input type="range" id="sepia" name="sepia" min="0" max="10" aria-label="SEPIA">
+                                
+                                <label for="hue">HUE:</label>
+                                <input type="range" id="HUE" name="HUE" min="0" max="10" aria-label="HUE">
+                            
+                                <label for="SATURADO">SATURADO:</label>
+                                <input type="range" id="SATURADO" name="escala de grises" min="0" max="10" aria-label="SATURADO">
+                                
+                                <label for="sepia">NEGATIVO:</label>
+                                <input type="range" id="NEGATIVO" name="NEGATIVO" min="0" max="10" aria-label="NEGATIVO">
+                            </div>
+
+                            <div class="margen">       
+                                <button class="botonAlign iAlign">Resetear </button>
+                            </div> 
+                        </section> 
+                         
 
                     </div>
 <!--TEXTO                             TEXTO                         TEXTO                    TEXTO              -->
@@ -188,7 +180,7 @@
                     </div>
                     
                     <div>
-                        <select class="panel-input panel-control-input" aria-label="Tipo de fuente" id="font-selector">
+                        <select class="panel-input " aria-label="Tipo de fuente" id="font-selector">
                             <option value="unset">Ninguno</option>
                             <option value="arial">Arial</option>
                             <option value="arial-black">Arial Black</option>
@@ -202,18 +194,57 @@
                         </select>
                     </div> 
                     
-                    <div class="panel colorflex">
+                    <div class="spaceBtwn margen">
 
                         <div>
-                            <input class="panel-input numeroDeFuente" type="number" name= "Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="testSizeValue" min="12" value="40">
+                            <input type="number" name= "Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="sizeValue" min="12" value="40">
                         </div>
 
                         <div >
-                            <button class=" botonAlign"><i class="fas fa-align-right iAlign"></i></button>
-                            <button class=" botonAlign"><i class="fas fa-align-center iAlign"></i></button>
-                            <button class=" botonAlign"><i class="fas fa-align-left iAlign"></i></button>
+                            <button id="left" class="botonAlign"><i class="fas fa-align-left iAlign"></i></button>
+                            <button id="center" class="botonAlign"><i class="fas fa-align-center iAlign"></i></button>
+                            <button id="right" class="botonAlign"><i class="fas fa-align-right iAlign"></i></button>
                          </div>
+    
                     </div>
+
+                    <div class="flex margen">
+                    <h3>Color</h3>
+                    <h3 class="margenIzq">Fondo</h3>
+                    </div>
+
+                    <div class=" spaceBtwn">
+
+                        <div class="inputColor">
+                            <input type="color" class="BolaColor" id="colorTexto" name="color" value="#fffff" aria-label="Color del texto"  aria-hidden="true">
+                            <span  id="textColor" aria-hidden="true">#FFFFFF</span>
+                        </div>
+
+                        <div class="inputColor">
+                            <input type="color" class="BolaColor" id="colorFondoTexto" name="color" value="#fffff" aria-label="Color de fondo del texto">
+                            <span  id="textColor" aria-hidden="true">#FFFFFF</span>
+                        </div>
+                       
+                    </div>
+
+                    <div class="margen">
+                        <input type="checkbox" id="fondoTransparente" name="fondoTransparente" value="fondoTransparente">
+                        <label for="fondoTransparente"> Fondo transparente</label><br>
+                    </div>
+
+                    <h3 class="margen">Contorno</h3>
+                    <div>
+                        <button class="botonAlign iAlign">Ninguno</button>
+                        <button class="botonAlign iAlign">Claro</button>
+                        <button class="botonAlign iAlign">Oscuro</button>
+                    </div>
+
+                    <h3 class="margen">Espaciado</h3>
+                    <input type="number" class="inputEspaciado" id="espaciado" name="espaciado" value="espaciado" min="10" max="50">
+
+                    <h3 class="margen">Interlineado</h3>
+                    <input type="number" class="inputEspaciado" id="espaciado" name="espaciado" value="espaciado" min="10" max="50">
+
                 </div>
                 
                 

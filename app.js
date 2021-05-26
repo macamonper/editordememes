@@ -86,6 +86,7 @@ const InputBottomText = document.getElementById("bottom-text-input");
 InputBottomText.addEventListener("input",() =>{
   bottomText.innerText=InputBottomText.value;
 });
+
 //QUITAR TEXTO
 const checkboxTop = document.getElementById("textoSuperior");
 const checkboxBottom = document.getElementById("textoInferior");
@@ -119,3 +120,31 @@ selectorFuente.addEventListener("change", () =>{
   bottomText.style.fontFamily =`${selectorFuente.value}`;
 });
 
+//CAMBIAR TAMAÑO DE FUENTE
+
+const tamanioDeFuente= document.getElementById("sizeValue");
+
+tamanioDeFuente.addEventListener("change",()=>{
+ topText.style.fontSize = `${tamanioDeFuente.value}px`;
+ bottomText.style.fontSize= `${tamanioDeFuente.value}px`;
+});
+
+//CAMBIAR ALINEACION
+
+const alignDer = document.getElementById("right");
+const alignCentro= document.getElementById("center");
+const alignIzq = document.getElementById("left");
+
+
+alignDer.addEventListener("click",()=>{
+  topText.style.justifyContent ="flex-end";
+  bottomText.style.justifyContent="flex-end";
+});
+alignCentro.addEventListener("click",()=>{
+  topText.style.justifyContent ="center";
+  bottomText.style.justifyContent="center";
+});
+alignIzq.addEventListener("click",()=>{
+  topText.style.justifyContent ="left";
+  bottomText.style.justifyContent="left";
+});

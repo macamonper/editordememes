@@ -10,6 +10,7 @@ box-sizing: border-box;
 body{
     line-height: 1.5;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
 }
 /****************************************************************************************************
 MODOS                                   MODOS                                    MODOS
@@ -162,7 +163,7 @@ main{
 
     background-color: white;
     width: 100%;
-    height: 15%;
+    height: auto;
     padding: 0.5em;
     font-size: 1.5rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -183,7 +184,7 @@ main{
     justify-content: center;
     padding-top: 0.5em;
     background-color: white;
-    height: 15%;
+    height: auto;
     width: 100%;
     padding: 0.5em;
 
@@ -213,7 +214,7 @@ main{
 /****************************************************************************************************
 ASIDE                                   ASIDE                                    ASIDE
 ****************************************************************************************************/
-.panel{
+.flex{
     display: flex;
 }
 
@@ -227,14 +228,14 @@ ASIDE                                   ASIDE                                   
     text-align: right;
     background-color: var(--colorFondoTerciario);
     color: var(--colorTexto);
-    border: transparent;
-    margin-bottom: 0.5em;
+    border: none;
 }
 .cross{
     border: 4px transparent solid;
     cursor: pointer;
     border-radius:20% ;
-    padding: 1px;}
+    padding: 0em;
+}
 
 .cross:hover{
     background-color: var(--inputHover);
@@ -246,7 +247,7 @@ ASIDE                                   ASIDE                                   
     
     height: 100%;
     width:25%;
-    padding: 1em 1em;
+    padding: 0.5em 0.5em 0em 1em;
     color:var(--colorTexto);
     background-color:var(--colorFondoTerciario);
 
@@ -265,7 +266,6 @@ h2{
 
     display: flex;
     justify-content: center;
-    margin-bottom: 0.5em;
 }
 
 h3{
@@ -274,13 +274,40 @@ h3{
     margin-bottom: 0.5em;
 }
 label{ 
-    font-size: 0.75rem;
+    font-size: 0.70rem;
+}
+.spaceBtwn{
+    display: flex;
+    justify-content: space-between;
+
+}
+.inputColor{
+    width: 48%;
+    padding: 0.2em;
+    border:0;
+    border-radius: 3px;
+    color: var(--colorTexto);
+    background-color: var(--input);
+}
+.BolaColor{
+    margin-left: 0.5em;
+    width:15%;
+    margin-right: 0.4em;
+    border:none;
+    background-color: var(--input);
+}
+
+.inputSelect{
+    width: 9em;
+    height:100%;
+    border:0;
+    border-radius: 3px;
+    color: var(--colorTexto);
+    background-color: var(--input);
 }
 
 .panel-input{
     width: 100%;
-    height: 100%;
-    margin: 0em 0.5em 0.5em 0em;
     padding: 0.3125em 0.625em;
     
     border:0;
@@ -290,46 +317,10 @@ label{
 
 }
 
-.panel-input-color{
-    width: 100%;
-    height: 100%;
-    margin: 0em 0.5em 0.5em 0em;
-    padding: 0.3125em 7em 0em 0.625em;
-
-    background-color: var(--input);
-    border: transparent;
-    border-radius: 3px;
-    margin-bottom: 0.3125em;
-}
-.panel-input-color:hover,.panel-input:hover,input:hover,.botonAlign:hover{
-    background-color: var(--inputHover);
-}
-
-.colorflex{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.panel-mezcla{
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-
-}
-
-.span-input{
-position:absolute;
-margin: 0.4em 0em 0em 2em;
-
-}
-
 .margen{
-    margin-top: 0.5em;
+    margin-top: 0.3em;
 }
-.margenIzq{
-    margin-inline-end: 1em;
-}
+
 textarea{
     resize: vertical;
     outline: none;
@@ -337,20 +328,45 @@ textarea{
     height: 3em;
     width: 25.5625em;
 }
-.numeroDeFuente{
-    width:10em;
-    text-align: center;
+#sizeValue{
+    height: 100%;
+    padding: 0.3125em 0.625em;
+    
+    background-color: var(--input);
+    color: var(--colorTexto);
+    border: none;
+    border-radius: 3px;
 }
+
+
 .botonAlign{
     color: var(--colorTexto);
     background-color: var(--input);
     border: 1px solid transparent;
-    border-radius: 10%;
+    border-radius: 3px;
     height: 100%;
 }
 .iAlign{
     padding: 0.5em;
     
+}
+.spaceAround{
+    display: flex;
+    justify-content: space-around;
+}
+
+.margenIzq{
+    margin-inline-start: 10em;
+}
+.inputEspaciado{
+    background-color: var(--input);
+    border:0;
+    border-radius: 3px;
+    height:2em;
+    width:100%
+}
+input:hover.panel-input:hover,.botonAlign:hover,textarea:hover,.inputColor:hover,.inputSelect:hover,.BolaColor:hover,.botonAlign:hover,.inputEspaciado:hover{
+    background-color: var(--inputHover);
 }
 /*
 INPUTS                                         INPUTS                                         INPUTS                  
@@ -358,36 +374,26 @@ INPUTS                                         INPUTS                           
 input[type='range'] {
     width: 100%;
     background-color: #5a5d68;
-    border-radius: 0.625em;
     appearance: none;
-    height: 0.375em;
+    height: 0.35em;
   }
   
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height:1em;
-    width: 1em;
+    height:0.8em;
+    width: 0.8em;
     border-radius: 50%;
     background: white;
     cursor: pointer;
   }
   
-  input[type='checkbox'] {
-    margin: 0 5px 0 0;
-    height: 1em;
-  }
-
   input[type='color']::-webkit-color-swatch {
-    height: 1em;
-    min-width: 1.125em;
     border-radius: 100%;
-    border: 0;
-    margin: 0;
-    padding: 0;
+    border: none;
     cursor: pointer;
     
   }
-
+/*MEDIA QUERY                           MEDIA QUERY      */
 @media (min-width: 280px) and (max-width: 645px){
 
 .meme-container{
