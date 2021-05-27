@@ -41,6 +41,16 @@ cierre.addEventListener("click",() => {
   document.getElementById("container-aside").classList.add('hidden');
 });
 
+//CARGAR IMAGEN DE MEME              CARGAR IMAGEN DE MEME           CARGAR IMAGEN DE MEME
+const meme = document.getElementById("meme");
+const url = document.getElementById("link");
+
+function cambiarUrl(){
+  meme.style.backgroundImage=`url(${url.value})`;
+};
+
+url.addEventListener("change",cambiarUrl);
+
 //CAMBIAR COLOR DE FONDO DE MEME      CAMBIAR COLOR DE FONDO DE MEME   CAMBIAR COLOR DE FONDO DE MEME
 const valorColor = document.getElementById("color");
 
@@ -59,16 +69,36 @@ function blendText() {
 
 valorColor.addEventListener("input",blendText);
 
+// CAMBIAR MEZLCA FONDO
+const modos = document.getElementById("mezclaFondo");
 
-//CARGAR IMAGEN DE MEME              CARGAR IMAGEN DE MEME           CARGAR IMAGEN DE MEME
-const meme = document.getElementById("meme");
-const url = document.getElementById("link");
+  function mezcla(modos) {
+    switch (modos.value){
+      case "lighten": 
+      meme.style.backgroundBlendMode="lighten";
+      break;
+      case "darken": 
+      meme.style.backgroundBlendMode ="darken";
+      break;
+      case "difference": 
+      meme.style.backgroundBlendMode ="difference";
+      break;
+      case "luminosity":
+         meme.style.backgroundBlendMode = "luminosity";
+      break;
+      case "multiply": 
+      meme.style.backgroundBlendMode = "multiply";
+      break;
+      default:
+        modos.value= "unset";
+    }
+  }
+modos.addEventListener("change",mezcla);
+//
 
-function cambiarUrl(){
-  meme.style.backgroundImage=`url(${url.value})`;
-};
+//TEXTO                       TEXTO                             TEXTO           TEXTO
 
-url.addEventListener("change",cambiarUrl);
+//
 
 //CAMBIAR TOP TEXT                  CAMBIAR TOP TEXT                  CAMBIAR TOP TEXT
 const topText = document.querySelector(".top-text");
@@ -87,32 +117,32 @@ InputBottomText.addEventListener("input",() =>{
   bottomText.innerText=InputBottomText.value;
 });
 
-//QUITAR TEXTO
+//QUITAR TEXTO                QUITAR TEXTO                  QUITAR TEXTO
 const checkboxTop = document.getElementById("textoSuperior");
 const checkboxBottom = document.getElementById("textoInferior");
 const divTopText= document.querySelector(".top-text");
 const divBottomText = document.querySelector(".bottom-text");
+const em = Number(46)
 
 checkboxTop.addEventListener( 'change', function() {
   if(checkboxTop.checked) {
-    topText.classList.toggle('ocultar')
+    topText.classList.toggle('ocultar');
   } 
   else{
     topText.classList.toggle('ocultar')
-  
   }
 });
 
 checkboxBottom.addEventListener( 'change', function() {
 if(checkboxBottom.checked) {
-  bottomText.classList.toggle('ocultar')
+  bottomText.classList.toggle('ocultar');
 } 
 else{
-  bottomText.classList.toggle('ocultar')
+  bottomText.classList.toggle('ocultar');
 }
 });
 
-//CAMBIAR FUENTE 
+//CAMBIAR FUENTE                CAMBIAR FUENTE                    CAMBIAR FUENTE 
 const selectorFuente = document.getElementById("font-selector");
 
 selectorFuente.addEventListener("change", () =>{
@@ -120,7 +150,7 @@ selectorFuente.addEventListener("change", () =>{
   bottomText.style.fontFamily =`${selectorFuente.value}`;
 });
 
-//CAMBIAR TAMAÑO DE FUENTE
+//CAMBIAR TAMAÑO DE FUENTE            CAMBIAR TAMAÑO DE FUENTE        CAMBIAR TAMAÑO DE FUENTE
 
 const tamanioDeFuente= document.getElementById("sizeValue");
 
@@ -129,7 +159,7 @@ tamanioDeFuente.addEventListener("change",()=>{
  bottomText.style.fontSize= `${tamanioDeFuente.value}px`;
 });
 
-//CAMBIAR ALINEACION
+//CAMBIAR ALINEACION          CAMBIAR ALINEACION                CAMBIAR ALINEACION
 
 const alignDer = document.getElementById("right");
 const alignCentro= document.getElementById("center");
@@ -149,7 +179,7 @@ alignIzq.addEventListener("click",()=>{
   bottomText.style.justifyContent="left";
 });
 
-//CAMBIAR COLOR DE LETRA
+//CAMBIAR COLOR DE LETRA            CAMBIAR COLOR DE LETRA        CAMBIAR COLOR DE LETRA
 const fontColor = document.getElementById ("colorTexto");
 
 colorTexto.addEventListener("input", () =>{
@@ -157,7 +187,7 @@ colorTexto.addEventListener("input", () =>{
   bottomText.style.color =`${fontColor.value}`;
 });
 
-//CAMBIAR COLOR DE FONDO DE TEXTO
+//CAMBIAR COLOR DE FONDO DE TEXTO                 CAMBIAR COLOR DE FONDO DE TEXTO
 
 const colorFondoTexto = document.getElementById ("colorFondoTexto");
 
@@ -168,7 +198,7 @@ colorFondoTexto.addEventListener("input",() =>{
   divBottomText.style.backgroundColor = `${colorFondoTexto.value}`;
 });
 
-//FONDO TRANSPARENTE
+//FONDO TRANSPARENTE                            FONDO TRANSPARENTE
 
 const fondoTransparente = document.getElementById("fondoTransparente");
 
@@ -185,7 +215,7 @@ fondoTransparente.addEventListener("change",() =>{
 
 });
 
-//CONTORNO
+// CONTORNO                               CONTORNO                         CONTORNO
 const none= document.getElementById("none");
 const blanco = document.getElementById("blanco");
 const negro = document.getElementById("negro"); 
@@ -204,7 +234,8 @@ negro.addEventListener("click", () =>{
   topText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px black`;
   bottomText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px black`;
 });
-//ESPACIADO
+
+//ESPACIADO                       ESPACIADO                                ESPACIADO
 const espaciado = document.getElementById("espaciado");
 
 espaciado.addEventListener("change",() =>{
@@ -212,7 +243,7 @@ espaciado.addEventListener("change",() =>{
   divBottomText.style.padding = `${espaciado.value}px`;
 });
 
-//INTERLINEADO
+//INTERLINEADO                  INTERLINEADO                              INTERLINEADO
 const interlineado = document.getElementById("interlineado");
 
 interlineado.addEventListener("change",() =>{
