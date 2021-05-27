@@ -148,3 +148,75 @@ alignIzq.addEventListener("click",()=>{
   topText.style.justifyContent ="left";
   bottomText.style.justifyContent="left";
 });
+
+//CAMBIAR COLOR DE LETRA
+const fontColor = document.getElementById ("colorTexto");
+
+colorTexto.addEventListener("input", () =>{
+  topText.style.color = `${fontColor.value}`;
+  bottomText.style.color =`${fontColor.value}`;
+});
+
+//CAMBIAR COLOR DE FONDO DE TEXTO
+
+const colorFondoTexto = document.getElementById ("colorFondoTexto");
+
+
+colorFondoTexto.addEventListener("input",() =>{
+
+  divTopText.style.backgroundColor = `${colorFondoTexto.value}`;
+  divBottomText.style.backgroundColor = `${colorFondoTexto.value}`;
+});
+
+//FONDO TRANSPARENTE
+
+const fondoTransparente = document.getElementById("fondoTransparente");
+
+fondoTransparente.addEventListener("change",() =>{
+
+  if (fondoTransparente.checked){
+    divTopText.style.backgroundColor = `${valorColor.value}`;
+    divBottomText.style.backgroundColor = `${valorColor.value}`;
+  }
+  else {
+    divTopText.style.backgroundColor = `${colorFondoTexto.value}`;
+    divBottomText.style.backgroundColor = `${colorFondoTexto.value}`;
+  }
+
+});
+
+//CONTORNO
+const none= document.getElementById("none");
+const blanco = document.getElementById("blanco");
+const negro = document.getElementById("negro"); 
+const pixel = Number("2")
+
+none.addEventListener("click",() =>{
+  topText.style.textShadow = "none";
+  bottomText.style.textShadow ="none";
+});
+blanco.addEventListener("click", () =>{
+  topText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px white`;
+  bottomText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px white`;
+});
+
+negro.addEventListener("click", () =>{
+  topText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px black`;
+  bottomText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px black`;
+});
+//ESPACIADO
+const espaciado = document.getElementById("espaciado");
+
+espaciado.addEventListener("change",() =>{
+  divTopText.style.padding = `${espaciado.value}px`;
+  divBottomText.style.padding = `${espaciado.value}px`;
+});
+
+//INTERLINEADO
+const interlineado = document.getElementById("interlineado");
+
+interlineado.addEventListener("change",() =>{
+  topText.style.lineHeight = `${interlineado.value}`;
+  bottomText.style.lineHeight = `${interlineado.value}`;
+
+});

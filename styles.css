@@ -11,6 +11,7 @@ body{
     line-height: 1.5;
     font-family: 'Open Sans', sans-serif;
     overflow: hidden;
+    
 }
 /****************************************************************************************************
 MODOS                                   MODOS                                    MODOS
@@ -189,7 +190,7 @@ main{
     padding: 0.5em;
 
     font-size: 1.5rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact;
 }
 
 .btnDescarga{
@@ -257,7 +258,6 @@ ASIDE                                   ASIDE                                   
     right: 0;
     box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
     z-index: 10;
-    
 
 }
 h2{
@@ -276,6 +276,7 @@ h3{
 label{ 
     font-size: 0.70rem;
 }
+
 .spaceBtwn{
     display: flex;
     justify-content: space-between;
@@ -336,6 +337,8 @@ textarea{
     color: var(--colorTexto);
     border: none;
     border-radius: 3px;
+    outline: none;
+
 }
 
 
@@ -362,10 +365,14 @@ textarea{
     background-color: var(--input);
     border:0;
     border-radius: 3px;
-    height:2em;
-    width:100%
+    padding: 0.5em;
+    width:100%;
+    outline: none;
+    color: var(--colorTexto);
+
+
 }
-input:hover.panel-input:hover,.botonAlign:hover,textarea:hover,.inputColor:hover,.inputSelect:hover,.BolaColor:hover,.botonAlign:hover,.inputEspaciado:hover{
+input:hover.panel-input:hover,.botonAlign:hover,textarea:hover,.inputColor:hover,.inputSelect:hover,.BolaColor:hover,.botonAlign:hover,.inputEspaciado:hover,#sizeValue:hover{
     background-color: var(--inputHover);
 }
 /*
@@ -405,3 +412,10 @@ input[type='range'] {
 width:100%;}
 
 }
+
+/*@media (min-width: 1300px) {
+ 
+  
+@media (max-width: 700px) {
+   
+  }

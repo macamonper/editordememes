@@ -182,22 +182,22 @@
                     <div>
                         <select class="panel-input " aria-label="Tipo de fuente" id="font-selector">
                             <option value="unset">Ninguno</option>
-                            <option value="arial">Arial</option>
-                            <option value="arial-black">Arial Black</option>
-                            <option value="american-typewriter">American Typewriter</option>
-                            <option value="andale-mono">Andale Mono</option>
-                            <option value="comic-sans-ms">Comic Sans Ms</option>
-                            <option value="helvetica">Helvetica</option>
-                            <option value="impact">Impact</option>
-                            <option value="verdana">Verdana</option>
-                            <option value="times-new-roman">Times New Roman</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Impact">Impact</option>
+                            <option value="'Lucida Sans'">Lucida Sans</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="'Segoe UI">Segoe UI</option>
+                            <option value="'Gill Sans'">Gil Sans</option>
+                            <option value="'Franklin Gothic Medium'">Franklin Gothic Medium</option>
+                            <option value="Helvetica">Helvetica</option>
+                            <option value="'Times New Roman'">Times New Roman</option>
                         </select>
                     </div> 
                     
                     <div class="spaceBtwn margen">
 
                         <div>
-                            <input type="number" name= "Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="sizeValue" min="12" value="40">
+                            <input type="number" name= "Tamaño de fuente" aria-label="Tamaño de fuente" class="panel-control-input" id="sizeValue" min="12" max= "80" value="40">
                         </div>
 
                         <div >
@@ -216,13 +216,13 @@
                     <div class=" spaceBtwn">
 
                         <div class="inputColor">
-                            <input type="color" class="BolaColor" id="colorTexto" name="color" value="#fffff" aria-label="Color del texto"  aria-hidden="true">
+                            <input type="color" class="BolaColor" id="colorTexto" name="color" value="#000000" aria-label="Color del texto"  aria-hidden="true">
                             <span  id="textColor" aria-hidden="true">#FFFFFF</span>
                         </div>
 
                         <div class="inputColor">
-                            <input type="color" class="BolaColor" id="colorFondoTexto" name="color" value="#fffff" aria-label="Color de fondo del texto">
-                            <span  id="textColor" aria-hidden="true">#FFFFFF</span>
+                            <input type="color" class="BolaColor" id="colorFondoTexto" name="color" value="#ffffff" aria-label="Color de fondo del texto">
+                            <span id="textColor" aria-hidden="true">#FFFFFF</span>
                         </div>
                        
                     </div>
@@ -234,17 +234,23 @@
 
                     <h3 class="margen">Contorno</h3>
                     <div>
-                        <button class="botonAlign iAlign">Ninguno</button>
-                        <button class="botonAlign iAlign">Claro</button>
-                        <button class="botonAlign iAlign">Oscuro</button>
+                        <button id="none" class="botonAlign iAlign">Ninguno</button>
+                        <button id ="blanco"class="botonAlign iAlign">Claro</button>
+                        <button id ="negro" class="botonAlign iAlign">Oscuro</button>
                     </div>
 
                     <h3 class="margen">Espaciado</h3>
-                    <input type="number" class="inputEspaciado" id="espaciado" name="espaciado" value="espaciado" min="10" max="50">
+                    <input type="number" class="inputEspaciado" id="espaciado" name="espaciado" value="35" min="10" max="50">
 
                     <h3 class="margen">Interlineado</h3>
-                    <input type="number" class="inputEspaciado" id="espaciado" name="espaciado" value="espaciado" min="10" max="50">
-
+                    <select class="inputEspaciado " aria-label="Interlineado" id="interlineado">
+                        <option value="0.8">0.8</option>
+                        <option value="1">1</option>
+                        <option value="1.2" selected>1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                     
                 </div>
                 
                 
