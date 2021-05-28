@@ -41,6 +41,24 @@ cierre.addEventListener("click",() => {
   document.getElementById("container-aside").classList.add('hidden');
 });
 
+//DESCARGA                          DESCARGA                            DESCARGA
+const descarga = document.getElementById("download");
+const contenedor = document.querySelector(".meme-container");
+
+
+descarga.addEventListener ("click", () =>{
+  console.log ("entre a la funcion");
+  domtoimage.toBlob(contenedor).then (function(blob){
+    window.saveAs(blob, 'meme.png');
+  });
+});
+
+//FUNCIONALIDAD SOLAPAS DE DISEÑOS                   FUNCIONALIDAD SOLAPAS DE DISEÑOS
+
+
+//IMAGEN                             IMAGEN                          IMAGEN
+
+
 //CARGAR IMAGEN DE MEME              CARGAR IMAGEN DE MEME           CARGAR IMAGEN DE MEME
 const meme = document.getElementById("meme");
 const url = document.getElementById("link");
@@ -51,7 +69,7 @@ function cambiarUrl(){
 
 url.addEventListener("change",cambiarUrl);
 
-//CAMBIAR COLOR DE FONDO DE MEME      CAMBIAR COLOR DE FONDO DE MEME   CAMBIAR COLOR DE FONDO DE MEME
+//CAMBIAR COLOR DE FONDO DE MEME                           CAMBIAR COLOR DE FONDO DE MEME
 const valorColor = document.getElementById("color");
 
 function cambiarcolor( ){
@@ -69,34 +87,65 @@ function blendText() {
 
 valorColor.addEventListener("input",blendText);
 
-// CAMBIAR MEZLCA FONDO
+//  CAMBIAR MEZLCA FONDO           CAMBIAR MEZLCA FONDO         CAMBIAR MEZLCA FONDO
 const modos = document.getElementById("mezclaFondo");
 
-  function mezcla(modos) {
-    switch (modos.value){
-      case "lighten": 
-      meme.style.backgroundBlendMode="lighten";
-      break;
-      case "darken": 
-      meme.style.backgroundBlendMode ="darken";
-      break;
-      case "difference": 
-      meme.style.backgroundBlendMode ="difference";
-      break;
-      case "luminosity":
-         meme.style.backgroundBlendMode = "luminosity";
-      break;
-      case "multiply": 
-      meme.style.backgroundBlendMode = "multiply";
-      break;
-      default:
-        modos.value= "unset";
-    }
-  }
-modos.addEventListener("change",mezcla);
+modos.addEventListener("change", ()=>{
+  meme.style.backgroundBlendMode= modos.value;
+  console.log (modos.value)
+});
+
+
+//    FILTROS                           FILTROS                             FILTROS
+
+const brillo = document.getElementById("brillo");
+const opacidad = document.getElementById("opacidad");
+const contraste = document.getElementById("contraste");
+const desenfoque = document.getElementById("desenfoque");
+const escalaGris= document.getElementById("escalaGrises");
+const sepia = document.getElementById("sepia");
+const hue = document.getElementById("hue");
+const saturado = document.getElementById("saturado");
+const negativo = document.getElementById("negativo");
+
+const filtros = () =>{
+meme.style.filter = `brightness(${brillo.value}) opacity(${opacidad.value}) contrast(${contraste.value}%) blur(${desenfoque.value}px)
+grayscale(${escalaGris.value}%) sepia(${sepia.value}%) hue-rotate(${hue.value}deg) saturate(${saturado.value}%) invert(${negativo.value})`;
+
+}
+
+brillo.addEventListener("change", filtros);
+opacidad.addEventListener("change", filtros);
+contraste.addEventListener("change", filtros);
+desenfoque.addEventListener("change", filtros);
+escalaGris.addEventListener("change", filtros);
+sepia.addEventListener("change", filtros);
+hue.addEventListener("change", filtros);
+saturado.addEventListener("change", filtros);
+negativo.addEventListener("change", filtros);
+
+
+//  RESTABLECER FILTROS           RESTABLECER FILTROS                 RESTABLECER FILTROS
+
+const restablecer = document.getElementById("reset");
+
+restablecer.addEventListener("click", () =>{
+  brillo.value = 1;
+  opacidad.value = 1;
+  contraste.value = 100;
+  desenfoque.value = 0;
+  escalaGris.value = 0;
+  sepia.value = 0;
+  hue.value = 0;
+  saturado.value = 100;
+  negativo.value = 0;
+  filtros()
+});
+
+
 //
 
-//TEXTO                       TEXTO                             TEXTO           TEXTO
+//TEXTO                    TEXTO                   TEXTO                    TEXTO
 
 //
 
@@ -117,7 +166,7 @@ InputBottomText.addEventListener("input",() =>{
   bottomText.innerText=InputBottomText.value;
 });
 
-//QUITAR TEXTO                QUITAR TEXTO                  QUITAR TEXTO
+//QUITAR TEXTO                    QUITAR TEXTO                        QUITAR TEXTO
 const checkboxTop = document.getElementById("textoSuperior");
 const checkboxBottom = document.getElementById("textoInferior");
 const divTopText= document.querySelector(".top-text");
@@ -142,7 +191,7 @@ else{
 }
 });
 
-//CAMBIAR FUENTE                CAMBIAR FUENTE                    CAMBIAR FUENTE 
+//CAMBIAR FUENTE                     CAMBIAR FUENTE                    CAMBIAR FUENTE 
 const selectorFuente = document.getElementById("font-selector");
 
 selectorFuente.addEventListener("change", () =>{
@@ -159,7 +208,7 @@ tamanioDeFuente.addEventListener("change",()=>{
  bottomText.style.fontSize= `${tamanioDeFuente.value}px`;
 });
 
-//CAMBIAR ALINEACION          CAMBIAR ALINEACION                CAMBIAR ALINEACION
+//CAMBIAR ALINEACION                  CAMBIAR ALINEACION               CAMBIAR ALINEACION
 
 const alignDer = document.getElementById("right");
 const alignCentro= document.getElementById("center");
@@ -187,7 +236,7 @@ colorTexto.addEventListener("input", () =>{
   bottomText.style.color =`${fontColor.value}`;
 });
 
-//CAMBIAR COLOR DE FONDO DE TEXTO                 CAMBIAR COLOR DE FONDO DE TEXTO
+//  CAMBIAR COLOR DE FONDO DE TEXTO                       CAMBIAR COLOR DE FONDO DE TEXTO
 
 const colorFondoTexto = document.getElementById ("colorFondoTexto");
 
@@ -198,7 +247,7 @@ colorFondoTexto.addEventListener("input",() =>{
   divBottomText.style.backgroundColor = `${colorFondoTexto.value}`;
 });
 
-//FONDO TRANSPARENTE                            FONDO TRANSPARENTE
+//FONDO TRANSPARENTE                 FONDO TRANSPARENTE                FONDO TRANSPARENTE
 
 const fondoTransparente = document.getElementById("fondoTransparente");
 
@@ -215,7 +264,7 @@ fondoTransparente.addEventListener("change",() =>{
 
 });
 
-// CONTORNO                               CONTORNO                         CONTORNO
+//      CONTORNO                        CONTORNO                     CONTORNO
 const none= document.getElementById("none");
 const blanco = document.getElementById("blanco");
 const negro = document.getElementById("negro"); 
@@ -235,7 +284,7 @@ negro.addEventListener("click", () =>{
   bottomText.style.textShadow = `${pixel}px ${pixel}px ${pixel}px black`;
 });
 
-//ESPACIADO                       ESPACIADO                                ESPACIADO
+//    ESPACIADO                       ESPACIADO                                ESPACIADO
 const espaciado = document.getElementById("espaciado");
 
 espaciado.addEventListener("change",() =>{
@@ -243,11 +292,10 @@ espaciado.addEventListener("change",() =>{
   divBottomText.style.padding = `${espaciado.value}px`;
 });
 
-//INTERLINEADO                  INTERLINEADO                              INTERLINEADO
+//  INTERLINEADO                      INTERLINEADO                         INTERLINEADO
 const interlineado = document.getElementById("interlineado");
 
 interlineado.addEventListener("change",() =>{
   topText.style.lineHeight = `${interlineado.value}`;
   bottomText.style.lineHeight = `${interlineado.value}`;
-
 });

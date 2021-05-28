@@ -7,6 +7,20 @@
     <title>Editor de memes</title>
 
     <link rel="stylesheet" href="styles.css"/>
+
+    
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" 
+    integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" 
+    crossorigin="anonymous">
+    </script>
+    <!--FileSaver-->
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" 
+    integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" 
+    crossorigin="anonymous">
+    </script>
+
     
 </head>
 
@@ -50,7 +64,7 @@
          
                 </div> 
                 
-                <button class="btnDescarga">
+                <button id="download" class="btnDescarga">
                     <i class="fas fa-download"></i>
                     <p>Descargar meme</p>
                 </button>
@@ -62,7 +76,7 @@
                 ************************************************************************************************
             -->
             
-            <section class="  ">
+            <section>
 
                 <div id="container-aside" class="hidden">
 
@@ -110,35 +124,35 @@
                             
                             <div>    
                                 <label for="brillo">BRILLO:</label>
-                                <input type="range" id="brillo" name="brillo" min="0" max="10" aria-label="brillo">
+                                <input type="range" id="brillo" name="brillo" min="0" max="1" aria-label="brillo" value="1" step="0.1">
                             
                                 <label for="opacidad">OPACIDAD:</label>
-                                <input type="range" id="opacidad" name="opacidad" min="0" max="10" aria-label="opacidad">
+                                <input type="range" id="opacidad" name="opacidad" min="0" max="1" aria-label="opacidad" value="1" step="0.1">
             
                                 <label for="contraste">CONTRASTE:</label>
-                                <input type="range" id="contraste" name="contraste" min="0" max="10" aria-label="CONTRASTE">
+                                <input type="range" id="contraste" name="contraste" min="100" max="1000" aria-label="CONTRASTE" value="100">
                         
                                 <label for="desenfoque">DESENFOQUE:</label>
-                                <input type="range" id="desenfoque" name="desenfoque" min="0" max="10" aria-label="DESENFOQUE">
+                                <input type="range" id="desenfoque" name="desenfoque" min="0" max="10" aria-label="DESENFOQUE" value="0" step="0.1">
                             
                                 <label for="escala de grises">ESCALA DE GRISES:</label>
-                                <input type="range" id="escala de grises" name="escala de grises" min="0" max="10" aria-label="ESCALA DE GRISES">
+                                <input type="range" id="escalaGrises" name="escala de grises" min="0" max="100" aria-label="ESCALA DE GRISES" value="0">
                                 
                                 <label for="sepia">SEPIA:</label>
-                                <input type="range" id="sepia" name="sepia" min="0" max="10" aria-label="SEPIA">
+                                <input type="range" id="sepia" name="sepia" min="0" max="100" aria-label="SEPIA" value="0">
                                 
                                 <label for="hue">HUE:</label>
-                                <input type="range" id="HUE" name="HUE" min="0" max="10" aria-label="HUE">
+                                <input type="range" id="hue" name="HUE" min="0" max="360" aria-label="HUE" value="0">
                             
                                 <label for="SATURADO">SATURADO:</label>
-                                <input type="range" id="SATURADO" name="escala de grises" min="0" max="10" aria-label="SATURADO">
+                                <input type="range" id="saturado" name="escala de grises" min="100" max="1000" aria-label="SATURADO" value="100">
                                 
                                 <label for="sepia">NEGATIVO:</label>
-                                <input type="range" id="NEGATIVO" name="NEGATIVO" min="0" max="10" aria-label="NEGATIVO">
+                                <input type="range" id="negativo" name="NEGATIVO" min="0" max="1" aria-label="NEGATIVO" value="1" step="0.1">
                             </div>
 
                             <div class="margen">       
-                                <button class="botonAlign iAlign">Resetear </button>
+                                <button class="botonAlign iAlign" id="reset">Resetear </button>
                             </div> 
                         </section> 
                          
