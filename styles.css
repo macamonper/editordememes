@@ -10,7 +10,6 @@ box-sizing: border-box;
 body{
     line-height: 1.5;
     font-family: 'Open Sans', sans-serif;
-    
 }
 /****************************************************************************************************
 MODOS                                   MODOS                                    MODOS
@@ -254,7 +253,7 @@ ASIDE                                   ASIDE                                   
     justify-content: flex-start;
     
     height: 100%;
-    width:25%;
+    width:30%;
     padding: 0.5em 0.5em 0em 1em;
     color:var(--colorTexto);
     background-color:var(--colorFondoTerciario);
@@ -290,7 +289,8 @@ label{
 
 }
 .inputColor{
-    width: 48%;
+    width: 50%;
+    margin-right: 0.3em;
     padding: 0.2em;
     border:0;
     border-radius: 3px;
@@ -306,7 +306,7 @@ label{
 }
 
 .inputSelect{
-    width: 9em;
+    width: 100%;
     height:100%;
     border:0;
     border-radius: 3px;
@@ -423,6 +423,7 @@ padding: 0.5em;
 height: 100vh;
 }
 
+
 }
 
 
@@ -434,11 +435,20 @@ height: 100vh;
 
   #container-aside{
       width: 100%;
+      height: 100vh;
   
   }
 
   }
+@media (max-width:1059px){
+
+    #wrap{
+        flex-wrap: wrap;
+    }
+}
+
 @media (min-width: 1300px) {
+
     #container-aside {
       display: block;
       box-shadow: none;
