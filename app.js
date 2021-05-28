@@ -59,7 +59,7 @@ descarga.addEventListener ("click", () =>{
 //IMAGEN                             IMAGEN                          IMAGEN
 
 
-//CARGAR IMAGEN DE MEME              CARGAR IMAGEN DE MEME           CARGAR IMAGEN DE MEME
+//URL IMAGEN DE MEME              URL IMAGEN DE MEME           URL IMAGEN DE MEME
 const meme = document.getElementById("meme");
 const url = document.getElementById("link");
 
@@ -68,6 +68,19 @@ function cambiarUrl(){
 };
 
 url.addEventListener("change",cambiarUrl);
+
+//SUBIR ARCHIVO                 SUBIR ARCHIVO               SUBIR ARCHIVO
+
+const inpFile = document.getElementById("archivo");
+
+inpFile.addEventListener("change", function(){
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.addEventListener("load", function(){
+        meme.style.backgroundImage = `url(${this.result})`;
+    })
+    reader.readAsDataURL(file); 
+});
 
 //CAMBIAR COLOR DE FONDO DE MEME                           CAMBIAR COLOR DE FONDO DE MEME
 const valorColor = document.getElementById("color");
