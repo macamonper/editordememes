@@ -381,9 +381,10 @@ textarea{
 
 
 }
-input:hover.panel-input:hover,.botonAlign:hover,textarea:hover,.inputColor:hover,.inputSelect:hover,.BolaColor:hover,.botonAlign:hover,.inputEspaciado:hover,#sizeValue:hover{
+input:hover.panel-input:hover,.botonAlign:hover,textarea:hover,.inputSelect:hover,.botonAlign:hover,.inputEspaciado:hover,#sizeValue:hover{
     background-color: var(--inputHover);
 }
+
 /*
 INPUTS                                         INPUTS                                         INPUTS                  
 */
@@ -420,12 +421,20 @@ input[type='range'] {
 
 #container-aside{
 width:100%;
-padding: 0.2em;
+padding: 0.5em;
 height: 100vh;
 }
 
 }
 
+
+@media (min-width:645px) and (max-width: 700px) {
+ 
+  h1 {
+      font-size: 26px;
+  }
+
+  }
 @media (min-width: 1300px) {
     #container-aside {
       display: block;
@@ -435,15 +444,3 @@ height: 100vh;
       display: none;
     }
   }
-  
-@media (max-width: 700px) {
-   
-    h1 {
-        font-size: 26px;
-    }
- 
-    #container-aside{
-        width: 50%;
-    
-    }
-    }
