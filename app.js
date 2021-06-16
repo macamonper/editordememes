@@ -184,7 +184,7 @@ const checkboxTop = document.getElementById("textoSuperior");
 const checkboxBottom = document.getElementById("textoInferior");
 const divTopText= document.querySelector(".top-text");
 const divBottomText = document.querySelector(".bottom-text");
-const em = Number(46)
+
 
 checkboxTop.addEventListener( 'change', function() {
   if(checkboxTop.checked) {

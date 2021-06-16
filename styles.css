@@ -67,8 +67,7 @@ header{
 }
 
 h1{
-    display: flex;
-    font-size: 2.25rem;
+   font-size: 2.25rem;
 }
 
 .boton-menu{
@@ -253,7 +252,7 @@ ASIDE                                   ASIDE                                   
     justify-content: flex-start;
     
     height: 100%;
-    width:30%;
+    width:25%;
     padding: 0.5em 0.5em 0em 1em;
     color:var(--colorTexto);
     background-color:var(--colorFondoTerciario);
@@ -412,6 +411,12 @@ input[type='range'] {
 
 @media (min-width: 280px) and (max-width: 645px){
 
+h1{
+    font-size: 2rem;
+}
+main{
+    height: 90vh;
+}
 .meme-container{
     width:100%;
     height: 65vh;
@@ -422,13 +427,13 @@ width:100%;
 padding: 0.5em;
 height: 100vh;
 }
-
-
 }
-
 
 @media (min-width:645px) and (max-width: 700px) {
  
+main{
+    height: 100%;
+}
   h1 {
       font-size: 26px;
   }
