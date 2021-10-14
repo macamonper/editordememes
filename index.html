@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+  <!-- La pagina esta en español, pero el lenguaje del documento es ingles. Un lector de pantalla trataria de 
+leerla en ingles (va a leer "yiniradour di mims") y buscadores como google van a recomendar esta web a 
+angloparlantes.
+El lang del documento debe coincidir con el lenguaje que usan los usuarios de esta pagina.  -->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,8 +40,9 @@
         
         <div>
             <h1>Generador de Memes</h1>
-            
+            <!-- ojo con la comilla que te quedó mal cerrada aca -->
             <div ">
+                <!-- los ids y clases siempre separalos con-guiones. camelCase es para javascript.  -->
                 <button class="boton-menu" id="botonImagen"><i class="far fa-file-image"></i>Imagen</button>
                 <button class="boton-menu" id="botonTexto"><i class="fas fa-font"></i>Texto</button>
                 <button class="boton-switch" id="switchMode">
@@ -44,7 +50,7 @@
                     <span><i class="fas fa-moon"></i></span>
                 </button>
             </div>
-            
+            <!-- atencion al tabulado: este header deberia cerrar a la misma altura que se abre -->
             </header>
             
             <!--
@@ -52,12 +58,14 @@
                 MAIN                         MAIN                            MAIN
                 ************************************************************************************************
             -->  
+            <!-- atencion al tabulado: main deberia estar a la misma altura que header -->
             <main class="row">
                 
                 <div class="meme-container ">
 
                     <p class="top-text">TOP TEXT</p>
         
+                    <!-- aqui hace falta un aria label, si no el lector de pantalla no sabe que es esto -->
                     <div id="meme"></div>
 
                     <p class="bottom-text">BOTTOM TEXT</p>
@@ -90,11 +98,14 @@
 
                         <div>
                             <h3>URL</h3>
+                            <!-- el for del label debe coincidir con el id del elemento, si no no sirve de nada -->
                             <label for="link-a-imagen"></label>
                             <input type="url" id="link" class= "panel-input" name="imagen" aria-label="url de la imagen">
                         </div>
 
                         <div>
+                                   <!-- esto no deberia ser un h3, es un label que acompaña al input 
+                    misma observacion para todos tus h3 -->
                             <h3 class="margen">CARGAR IMAGEN</h3>
                             <input type="file" name="inpFile" id="archivo"  class="panel-input">
                         </div>
@@ -153,6 +164,7 @@
                                 <input type="range" id="saturado" name="escala de grises" min="100" max="1000" aria-label="SATURADO" value="100">
                                 
                                 <label for="sepia">NEGATIVO:</label>
+                                <!-- este valor esta mal, el value deberia ser 0 inicialmente  -->
                                 <input type="range" id="negativo" name="NEGATIVO" min="0" max="1" aria-label="NEGATIVO" value="1" step="0.1">
                             </div>
 
