@@ -1,6 +1,7 @@
 'use strict';
 
 //ONLOAD
+// no uses funciones con la sintaxis vieja, ni dejes console log en entregas
 function saludar () {
   console.log('Esta pagina ya se ha cargado');
 }
@@ -35,8 +36,10 @@ cambiarModo.addEventListener('click',() => {
 
 
 //CERRAR SOLAPA DE DISEÑO            CERRAR SOLAPA DE DISEÑO           CERRAR SOLAPA DE DISEÑO
+// deja espacio antes y despues del =
 const cierre= document.getElementById("cruz");
 
+// deja espacio entre la coma y el inicio de la funcion
 cierre.addEventListener("click",() => {
   document.getElementById("container-aside").classList.add('hidden');
 });
@@ -47,6 +50,7 @@ const contenedor = document.querySelector(".meme-container");
 
 
 descarga.addEventListener ("click", () =>{
+  // no dejes console log en entregas
   console.log ("entre a la funcion");
   domtoimage.toBlob(contenedor).then (function(blob){
     window.saveAs(blob, 'meme.png');
@@ -63,6 +67,7 @@ descarga.addEventListener ("click", () =>{
 const meme = document.getElementById("meme");
 const url = document.getElementById("link");
 
+// usa funciones flecha siempre 
 function cambiarUrl(){
   meme.style.backgroundImage=`url(${url.value})`;
 };
@@ -86,7 +91,7 @@ inpFile.addEventListener("change", function(){
 const valorColor = document.getElementById("color");
 
 function cambiarcolor( ){
- 
+//  innecesaria la interpolacion aca
   document.getElementById("meme").style.backgroundColor =`${valorColor.value}`;
 };
 
@@ -95,6 +100,7 @@ color.addEventListener('input', cambiarcolor);
 //    CAMBIAR VALOR DE COLOR EN SPAN                       CAMBIAR VALOR DE COLOR EN SPAN          
 
 function blendText() {
+  // innecesaria la interpolacion
   document.getElementById("textColor").innerHTML =`${valorColor.value}`;
 };
 
@@ -103,8 +109,10 @@ valorColor.addEventListener("input",blendText);
 //  CAMBIAR MEZLCA FONDO           CAMBIAR MEZLCA FONDO         CAMBIAR MEZLCA FONDO
 const modos = document.getElementById("mezclaFondo");
 
+// deja espacios en tus funciones: () => {
 modos.addEventListener("change", ()=>{
   meme.style.backgroundBlendMode= modos.value;
+  // no dejes console.log
   console.log (modos.value)
 });
 
@@ -196,6 +204,7 @@ checkboxTop.addEventListener( 'change', function() {
 });
 
 checkboxBottom.addEventListener( 'change', function() {
+  // ojo con el tabulado
 if(checkboxBottom.checked) {
   bottomText.classList.toggle('ocultar');
 } 
@@ -208,6 +217,7 @@ else{
 const selectorFuente = document.getElementById("font-selector");
 
 selectorFuente.addEventListener("change", () =>{
+  // interpolacion innecesaria
   topText.style.fontFamily =`${selectorFuente.value}` ;
   bottomText.style.fontFamily =`${selectorFuente.value}`;
 });
@@ -228,6 +238,7 @@ const alignCentro= document.getElementById("center");
 const alignIzq = document.getElementById("left");
 
 
+// usa espacios! se ve mucho mejor y es mas facil para el lector 
 alignDer.addEventListener("click",()=>{
   topText.style.justifyContent ="flex-end";
   bottomText.style.justifyContent="flex-end";
@@ -245,6 +256,7 @@ alignIzq.addEventListener("click",()=>{
 const fontColor = document.getElementById ("colorTexto");
 
 colorTexto.addEventListener("input", () =>{
+  // interpolacion innecesaria
   topText.style.color = `${fontColor.value}`;
   bottomText.style.color =`${fontColor.value}`;
 });
@@ -255,7 +267,7 @@ const colorFondoTexto = document.getElementById ("colorFondoTexto");
 
 
 colorFondoTexto.addEventListener("input",() =>{
-
+// interpolacion innecesaria
   divTopText.style.backgroundColor = `${colorFondoTexto.value}`;
   divBottomText.style.backgroundColor = `${colorFondoTexto.value}`;
 });
@@ -265,7 +277,7 @@ colorFondoTexto.addEventListener("input",() =>{
 const fondoTransparente = document.getElementById("fondoTransparente");
 
 fondoTransparente.addEventListener("change",() =>{
-
+// interpolacion innecesaria
   if (fondoTransparente.checked){
     divTopText.style.backgroundColor = `${valorColor.value}`;
     divBottomText.style.backgroundColor = `${valorColor.value}`;
@@ -281,6 +293,8 @@ fondoTransparente.addEventListener("change",() =>{
 const none= document.getElementById("none");
 const blanco = document.getElementById("blanco");
 const negro = document.getElementById("negro"); 
+
+// por que no usas el numero 2 y listo?? 
 const pixel = Number("2")
 
 none.addEventListener("click",() =>{
@@ -309,6 +323,7 @@ espaciado.addEventListener("change",() =>{
 const interlineado = document.getElementById("interlineado");
 
 interlineado.addEventListener("change",() =>{
+  // interpolacion innecesaria
   topText.style.lineHeight = `${interlineado.value}`;
   bottomText.style.lineHeight = `${interlineado.value}`;
 });

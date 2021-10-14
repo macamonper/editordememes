@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
+/* atencion a la prolijidad en css, siempre dejá un espacio entre el selector y la llave de apertura, 
+y no dejes espacios de mas
 
+el tabulado debe cumplirse en css, todos los valores de css deben estar un tab despues
+que el selector*/
 *{
+    /* aca el tabulado deberia ser:
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; */
 margin: 0;
 padding: 0;
 box-sizing: border-box;
@@ -20,6 +28,7 @@ body.dark{
     --colorFondoSecundario: #312244;
     --colorFondoTerciario: #271B36;
     --colorTexto: white;
+    /* no dejes saltos de linea innecesarios, como aca */
     
     --botonMenuHover:#402d58;
     --btnDescarga: #15a14b;
@@ -54,6 +63,7 @@ header{
 
     border: solid 1px transparent;
     background-color: var(--colorFondoSecundario);
+    /* innecesario, es el valor por defecto */
     width:100%;
     color: var(--colorTexto);
     padding-top: 0.5em;
@@ -94,6 +104,7 @@ h1{
     padding: 0.5em;
     position: relative;
     cursor: pointer;
+    /* no pongas outline none a menos que lo reemplaces con algo mas */
     outline: none;
     border-radius: 1em;
    
@@ -132,6 +143,7 @@ MAIN                                    MAIN                                    
 main{
 
     background-color: var(--colorFondoPrimario);
+    /* esta orden no sirve porque no hay elementos suficientes para rellenar al 100%. deberia ser 100vh */
     height: 100%;
     display: flex;
     justify-content: center;
@@ -140,6 +152,7 @@ main{
 }
 .row{
     display: flex;
+    /* por que esta clase se llama "row" pero esta en flex column? esto garantiza una confusion */
     flex-direction: column;
     align-content: center;
 }
@@ -256,7 +269,7 @@ ASIDE                                   ASIDE                                   
     padding: 0.5em 0.5em 0em 1em;
     color:var(--colorTexto);
     background-color:var(--colorFondoTerciario);
-
+/* innecesario */
     overflow: auto;
     position: fixed;
     top: 0;
@@ -410,6 +423,7 @@ input[type='range'] {
 /*MEDIA QUERY                           MEDIA QUERY      */
 
 @media (min-width: 280px) and (max-width: 645px){
+    /* ojo con el tabulado, todo lo que esta dentro de una media query va con un tab de separacion */
 
 h1{
     font-size: 2rem;
